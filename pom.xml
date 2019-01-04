@@ -230,7 +230,7 @@
             <manifestEntries>
               <!-- Each package which activates the maven-jar-plugin should set up its module name,
                    typically using the longest common package prefix as name. -->
-              <Automatic-Module-Name>dk.northtech.singleprojectskeleton</Automatic-Module-Name>
+              <Automatic-Module-Name>dk.northtech.singleprojectmavenlayout</Automatic-Module-Name>
             </manifestEntries>
           </archive>
         </configuration>

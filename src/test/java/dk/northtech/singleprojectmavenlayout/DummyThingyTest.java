@@ -1,4 +1,4 @@
-package dk.northtech.singleprojectskeleton;
+package dk.northtech.singleprojectmavenlayout;
 
 import org.junit.jupiter.api.Test;
 
