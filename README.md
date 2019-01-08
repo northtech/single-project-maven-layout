@@ -12,7 +12,20 @@ Potentially useful dependencies
 Beyond the references already included in the `pom.xml` here are a couple of more specialized libraries which can come
 in handy:
 
-### [dsiutils](http://dsiutils.di.unimi.it/)
+### [Jdbi](http://jdbi.org/)
+This is largely what JDBC should have been since Java 8. It is a convenient, fluent way to write queries and map them
+to objects (including annotation-based automatic mapping), but it is deliberately _not_ a full ORM framework.
+
+### [jBCrypt](https://www.mindrot.org/projects/jBCrypt/)
+A Java implementation of the industry-standard BCrypt password salting.
+
+    <dependency>
+      <groupId>org.mindrot</groupId>
+      <artifactId>jbcrypt</artifactId>
+      <version>0.4</version>
+    </dependency>
+
+### [DSI Utilities](http://dsiutils.di.unimi.it/)
 A grab bag of interesting functions. Notably, it has some very strong random number generators such as 
 [XoRoShiRo128PlusRandom](http://dsiutils.di.unimi.it/docs/index.html?it/unimi/dsi/util/XoRoShiRo128PlusRandom.html),
 though note that Java 8+ has a
@@ -25,13 +38,4 @@ so you might not need this.
       <groupId>it.unimi.dsi</groupId>
       <artifactId>dsiutils</artifactId>
       <version>2.3.3</version>
-    </dependency>
-
-### [jBCrypt](https://www.mindrot.org/projects/jBCrypt/)
-A Java implementation of the industry-standard BCrypt password salting.
-
-    <dependency>
-      <groupId>org.mindrot</groupId>
-      <artifactId>jbcrypt</artifactId>
-      <version>0.4</version>
     </dependency>
