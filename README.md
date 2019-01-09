@@ -39,3 +39,24 @@ so you might not need this.
       <artifactId>dsiutils</artifactId>
       <version>2.3.3</version>
     </dependency>
+
+
+IntelliJ template
+-----------------
+As a convenience in IntelliJ, you can set up the class template to always include a logger.  
+Go to **Settings / Editor / File and Code Templates** and update **Class** to
+
+    #if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME};#end
+    #parse("File Header.java")
+    
+    import org.slf4j.Logger;
+    import org.slf4j.LoggerFactory;
+    import javax.annotation.ParametersAreNonnullByDefault;
+    
+    @ParametersAreNonnullByDefault
+    public class ${NAME} {
+     private static final Logger LOGGER = LoggerFactory.getLogger(${NAME}.class);
+    }
+
+(and then possibly disallow `System.out` under **Editor / Inspections**,
+**Java / Code maturity / Use of System.out or System.err** to make sure you always get traceable output.)
