@@ -37,7 +37,7 @@ so you might not need this.
     <dependency>
       <groupId>it.unimi.dsi</groupId>
       <artifactId>dsiutils</artifactId>
-      <version>2.3.3</version>
+      <version>2.6.5</version>
     </dependency>
 
 
