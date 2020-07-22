@@ -1,11 +1,7 @@
 <!--
 Make this log configuration file available in the classpath.
-
-For a Tomcat deployment, it is convenient to place it in the [Tomcat home]/lib folder, where it can be edited without
-redeployment.
-
-Alternatively, place it in src/main/resources to have it packaged into the war and only take effect for the web-app it
-is deployed with.
+For a Tomcat deployment, it is convenient to place it in the [Tomcat home]/lib folder, where it can be edited without redeployment.
+Alternatively, place it in src/main/resources to have it packaged into the war and only take effect for the web-app it is deployed with.
 The downside to this is that it is not easily editable and persistent, as it will be overwritten with each deployment.
 -->
 <configuration scan="true" scanPeriod="30 seconds">
@@ -20,8 +16,11 @@ The downside to this is that it is not easily editable and persistent, as it wil
     </encoder>
   </appender>
 
+  <!-- Do not include the AsyncAppender unless you actually use it in a logger. Otherwise it instantiates an object
+       which will never get a shutdown message from the logging context, creating a thread- and classloader leak. -->
   <appender name="async-rollingfile" class="ch.qos.logback.classic.AsyncAppender">
     <appender-ref ref="rollingfile"/>
+    <maxFlushTime>0</maxFlushTime>
   </appender>
 
   <root level="INFO">

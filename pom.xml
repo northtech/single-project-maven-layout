@@ -36,9 +36,9 @@
       <classifier>no_aop</classifier>
     </dependency>
     <dependency>
-      <groupId>io.dropwizard.metrics</groupId>
-      <artifactId>metrics-core</artifactId>
-      <version>4.1.6</version>
+      <groupId>io.micrometer</groupId>
+      <artifactId>micrometer-registry-prometheus</artifactId>
+      <version>1.5.2</version>
     </dependency>
     <dependency>
       <groupId>io.reactivex.rxjava2</groupId>
@@ -71,7 +71,7 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>3.3.3</version>
+      <version>3.4.4</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -116,7 +116,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-war-plugin</artifactId>
-          <version>3.2.3</version>
+          <version>3.3.1</version>
           <configuration>
             <failOnMissingWebXml>false</failOnMissingWebXml>
           </configuration>
@@ -132,14 +132,15 @@
         <plugin>
           <groupId>com.github.ekryd.sortpom</groupId>
           <artifactId>sortpom-maven-plugin</artifactId>
-          <version>2.11.0</version>
+          <version>2.12.0</version>
           <configuration>
-            <predefinedSortOrder>custom_1</predefinedSortOrder>
             <nrOfIndentSpace>2</nrOfIndentSpace>
             <sortDependencies>scope,groupId,artifactId</sortDependencies>
             <sortPlugins>executions,groupId,artifactId</sortPlugins>
-            <sortProperties>true</sortProperties>
+            <sortModules>true</sortModules>
+            <sortProperties>false</sortProperties>
             <keepBlankLines>true</keepBlankLines>
+            <predefinedSortOrder>custom_1</predefinedSortOrder>
             <createBackupFile>false</createBackupFile>
           </configuration>
           <executions>
@@ -157,6 +158,8 @@
           <version>0.18.2</version>
           <configuration>
             <format>html</format>
+            <sourceDirectory>${basedir}/target/jgiven-reports/json</sourceDirectory>
+            <outputDirectory>${basedir}/target/jgiven-reports/html</outputDirectory>
           </configuration>
           <executions>
             <execution>
@@ -170,7 +173,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
-          <version>3.0.0-M2</version>
+          <version>3.0.0-M3</version>
           <executions>
             <execution>
               <id>enforce-maven</id>
