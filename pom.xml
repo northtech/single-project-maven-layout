@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>dk.northtech.singleprojectmavenlayout</groupId>
@@ -27,23 +26,22 @@
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>29.0-jre</version>
+      <version>30.1-jre</version>
     </dependency>
     <dependency>
       <groupId>com.google.inject</groupId>
       <artifactId>guice</artifactId>
-      <version>4.2.3</version>
-      <classifier>no_aop</classifier>
+      <version>5.0.1</version>
     </dependency>
     <dependency>
       <groupId>io.micrometer</groupId>
       <artifactId>micrometer-registry-prometheus</artifactId>
-      <version>1.5.2</version>
+      <version>1.6.4</version>
     </dependency>
     <dependency>
       <groupId>io.reactivex.rxjava2</groupId>
       <artifactId>rxjava</artifactId>
-      <version>2.2.19</version>
+      <version>2.2.21</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -53,25 +51,25 @@
     <dependency>
       <groupId>com.google.truth.extensions</groupId>
       <artifactId>truth-java8-extension</artifactId>
-      <version>1.0.1</version>
+      <version>1.1.2</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.tngtech.jgiven</groupId>
       <artifactId>jgiven-junit5</artifactId>
-      <version>0.18.2</version>
+      <version>1.0.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.6.2</version>
+      <version>5.7.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>3.4.4</version>
+      <version>3.8.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -105,6 +103,11 @@
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.2.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.2</version>
           <configuration>
@@ -124,7 +127,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>versions-maven-plugin</artifactId>
-          <version>2.7</version>
+          <version>2.8.1</version>
           <configuration>
             <rulesUri>file://${basedir}/maven-version-rules.xml</rulesUri>
           </configuration>
@@ -132,7 +135,7 @@
         <plugin>
           <groupId>com.github.ekryd.sortpom</groupId>
           <artifactId>sortpom-maven-plugin</artifactId>
-          <version>2.12.0</version>
+          <version>2.13.1</version>
           <configuration>
             <nrOfIndentSpace>2</nrOfIndentSpace>
             <sortDependencies>scope,groupId,artifactId</sortDependencies>
@@ -155,7 +158,7 @@
         <plugin>
           <groupId>com.tngtech.jgiven</groupId>
           <artifactId>jgiven-maven-plugin</artifactId>
-          <version>0.18.2</version>
+          <version>1.0.0</version>
           <configuration>
             <format>html</format>
             <sourceDirectory>${basedir}/target/jgiven-reports/json</sourceDirectory>
@@ -239,6 +242,10 @@
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
       </plugin>
       <plugin>
@@ -266,15 +273,15 @@
       <url>https://repo1.maven.org/maven2</url>
     </repository>
     <repository>
-      <id>osgeo</id>
-      <name>OSGeo Release Repository</name>
-      <url>https://repo.osgeo.org/repository/release/</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
       <releases>
         <enabled>true</enabled>
       </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>osgeo</id>
+      <name>OSGeo Release Repository</name>
+      <url>https://repo.osgeo.org/repository/release/</url>
     </repository>
     <repository>
       <snapshots>
